@@ -3,8 +3,8 @@ def nyc_pigeon_organizer(data)
   data.each do |attribute, items|
     items.each do |feature, names|
       names.each do |name|
-        pigeon_list[name] = {}
-        pigeon_list[name][attribute] = []
+        pigeon_list[name] ||= {}
+        pigeon_list[name][attribute] ||= []
         pigeon_list[name][attribute] << feature.to_s
       end
     end
